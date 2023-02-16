@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="flex-container">
-      <div>
-        <div class="flex-container2">
+    <div class="root">
+      <main class="simple-counter-container">
+        <div class="simple-counter-container__counter">
           <h1>Counter</h1>
-          <p>0</p>
+          <p id="counter">0</p>
         </div>
-        <div id="buttons-div">
-          <button>DECREASE</button>
-          <button>RESET</button>
-          <button>INCREASE</button>
+        <div class="simple-counter-container__buttons">
+          <button id="decrease">DECREASE</button>
+          <button id="reset">RESET</button>
+          <button id="increase">INCREASE</button>
         </div>
-      </div>
+      </main>
     </div>
     <script src="app.js"></script>
   </body>

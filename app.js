@@ -1,33 +1,40 @@
-const buttons = document.getElementById("buttons-div");
-const number = document.querySelector("p");
+const counterElement = document.getElementById("counter");
 
-const decreaseButton = buttons.children[0];
-const resetButton = buttons.children[1];
-const increaseButton = buttons.children[2];
+const decreaseButton = document.getElementById("decrease");
+const resetButton = document.getElementById("reset");
+const increaseButton = document.getElementById("increase");
 
-// console.log(decreaseButton, resetButton, increaseButton);
+let counter = 0;
 
-function verifyNumber() {
-  if (number.innerText < 0) {
-    number.style.color = "red";
-  } else if (number.innerText == 0) {
-    number.style.color = "hotpink";
-  } else if (number.innerText > 0) {
-    number.style.color = "green";
+const updateCounterElement = () => {
+  counterElement.innerText = counter;
+
+  if (counter < 0) {
+    counterElement.style.color = "red";
+  } else if (counter === 0) {
+    counterElement.style.color = "black";
+  } else {
+    counterElement.style.color = "green";
   }
-}
+};
 
-decreaseButton.addEventListener("click", function () {
-  number.innerText--;
-  verifyNumber();
+// Decrease
+decreaseButton.addEventListener("click", () => {
+  counter--;
+
+  updateCounterElement();
 });
 
-resetButton.addEventListener("click", function () {
-  number.innerText = 0;
-  verifyNumber();
+// Reset
+resetButton.addEventListener("click", () => {
+  counter = 0;
+
+  updateCounterElement();
 });
 
-increaseButton.addEventListener("click", function () {
-  number.innerText++;
-  verifyNumber();
+// Increase
+increaseButton.addEventListener("click", () => {
+  counter++;
+
+  updateCounterElement();
 });
