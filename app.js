@@ -13,7 +13,7 @@ const updateCounterElement = () => {
     counterElement.style.color = "red";
   } else if (counter === 0) {
     counterElement.style.color = "black";
-  } else {
+  } else if (counter > 0) {
     counterElement.style.color = "green";
   }
 };
